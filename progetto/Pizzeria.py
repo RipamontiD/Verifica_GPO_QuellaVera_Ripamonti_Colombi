@@ -165,36 +165,17 @@ def aggiungi_pizza():
         print("❌ Prezzo non valido!")
         
 
-def elimina_ordine():
-    """
-    Elimina un ordine esistente.
-    
-    Chiede conferma prima di eliminare.
-    """
-    if not ordini:
-        print("\n📋 Nessun ordine.")
-        return
-    
-    lista_ordini()
-    
-    try:
-        num = int(input("\nNumero ordine da eliminare: "))
-        ordine = next((o for o in ordini if o["numero"] == num), None)
-        
-        if ordine:
-            conferma = input(f"Eliminare ordine #{num}? (s/n): ")
-            if conferma.lower() == "s":
-                ordini.remove(ordine)
-                print(f"✅ Ordine #{num} eliminato!")
-            else:
-                print("❌ Operazione annullata.")
-        else:
-            print("❌ Ordine non trovato!")
-    except:
-        print("❌ Input non valido!")
-
 
 def stampa_scontrino(ordine):
+    """
+    Stampa lo scontrino di un ordine.
+    
+    Genera uno scontrino formattato con intestazione pizzeria,
+    dettagli ordine, elenco pizze e totale.
+    
+    Args:
+        ordine: Dizionario contenente numero, cliente, pizze e totale.
+    """
     print("\n")
     print("╔════════════════════════════════════╗")
     print("║        🍕 PIZZERIA ITALIA 🍕       ║")
