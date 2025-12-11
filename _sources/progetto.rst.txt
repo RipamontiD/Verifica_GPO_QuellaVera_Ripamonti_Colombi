@@ -1,8 +1,12 @@
-Documentazione del Progetto
-===========================
+Progetto
+========
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contenuti:
+.. automodule:: progetto
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   progetto
+.. automodule:: progetto.Pizzeria
+   :members:
+   :undoc-members:
+   :show-inheritance:
