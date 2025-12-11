@@ -257,34 +257,34 @@ if __name__ == "__main__":
     """)
 
     while True:
-    print("\n--- MENU ---")
-    print("1. Visualizza Menu")
-    print("2. Nuovo Ordine")
-    print("3. Lista Ordini")
-    print("4. Cambia Stato Ordine")
-    print("5. Aggiungi Pizza")
-    print("6. Elimina Ordine")
-    print("7. Cerca Pizza")
-    print("0. Esci")
+        print("\n--- MENU ---")
+        print("1. Visualizza Menu")
+        print("2. Nuovo Ordine")
+        print("3. Lista Ordini")
+        print("4. Cambia Stato Ordine")
+        print("5. Aggiungi Pizza")
+        print("6. Elimina Ordine")
+        print("7. Cerca Pizza")
+        print("0. Esci")
     
-    scelta = input("\nScelta: ")
-    
-    if scelta == "1":
-        mostra_menu()
-    elif scelta == "2":
-        nuovo_ordine()
-    elif scelta == "3":
-        lista_ordini()
-    elif scelta == "4":
-        cambia_stato()
-    elif scelta == "5":
-        aggiungi_pizza()
-    elif scelta == "6":
-        elimina_ordine()
-    elif scelta == "7":
-        cerca_pizza()
-    elif scelta == "0":
-        print("\n👋 Arrivederci!")
-        break
-    else:
-        print("❌ Scelta non valida!")
+        scelta = input("\nScelta: ")
+        
+        if scelta == "1":
+            mostra_menu()
+        elif scelta == "2":
+            nuovo_ordine()
+        elif scelta == "3":
+            lista_ordini()
+        elif scelta == "4":
+            cambia_stato()
+        elif scelta == "5":
+            aggiungi_pizza()
+        elif scelta == "6":
+            elimina_ordine()
+        elif scelta == "7":
+            cerca_pizza()
+        elif scelta == "0":
+            print("\n👋 Arrivederci!")
+            break
+        else:
+            print("❌ Scelta non valida!")
