@@ -128,6 +128,30 @@ def aggiungi_pizza():
         print(f"✅ Pizza '{nome}' aggiunta!")
     except:
         print("❌ Prezzo non valido!")
+        
+
+def elimina_ordine():
+    if not ordini:
+        print("\n📋 Nessun ordine.")
+        return
+    
+    lista_ordini()
+    
+    try:
+        num = int(input("\nNumero ordine da eliminare: "))
+        ordine = next((o for o in ordini if o["numero"] == num), None)
+        
+        if ordine:
+            conferma = input(f"Eliminare ordine #{num}? (s/n): ")
+            if conferma.lower() == "s":
+                ordini.remove(ordine)
+                print(f"✅ Ordine #{num} eliminato!")
+            else:
+                print("❌ Operazione annullata.")
+        else:
+            print("❌ Ordine non trovato!")
+    except:
+        print("❌ Input non valido!")
 
 
 # === PROGRAMMA PRINCIPALE ===
@@ -144,6 +168,7 @@ while True:
     print("3. Lista Ordini")
     print("4. Cambia Stato Ordine")
     print("5. Aggiungi Pizza")
+    print("6. Elimina Ordine")
     print("0. Esci")
     
     scelta = input("\nScelta: ")
@@ -158,6 +183,8 @@ while True:
         cambia_stato()
     elif scelta == "5":
         aggiungi_pizza()
+    elif scelta == "6":
+        elimina_ordine()
     elif scelta == "0":
         print("\n👋 Arrivederci!")
         break
