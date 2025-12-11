@@ -1,7 +1,0 @@
-PROJECT_NAME           = "Gestione Pizzeria"
-OUTPUT_DIRECTORY       = docs
-GENERATE_HTML          = YES
-GENERATE_LATEX         = NO
-INPUT                  = .
-FILE_PATTERNS          = *.py
-EXTRACT_ALL            = YES
