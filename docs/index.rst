@@ -11,3 +11,4 @@ pizzeria_verifica_GPO documentation
    :caption: Contenuti:
 
    progetto
+   changelog
