@@ -1,5 +1,10 @@
 Changelog
 =========
+Versione 1.3
+------------
+
+- **Nuova feature**: Aggiunta funzione ``cerca_pizza()`` per cercare pizze nel menu per nome.
+
 
 Versione 1.2
 ------------

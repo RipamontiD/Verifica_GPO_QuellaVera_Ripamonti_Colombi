@@ -124,5 +124,27 @@ class TestCalcoli(unittest.TestCase):
         self.assertEqual(diavola["prezzo"], 8.00)
 
 
+class TestRicerca(unittest.TestCase):
+    """Test per la ricerca pizza."""
+    
+    def test_trova_margherita(self):
+        """Verifica che trovi la Margherita."""
+        ricerca = "margherita"
+        risultati = [p for p in menu if ricerca in p["nome"].lower()]
+        self.assertEqual(len(risultati), 1)
+    
+    def test_ricerca_vuota(self):
+        """Verifica ricerca senza risultati."""
+        ricerca = "kebab"
+        risultati = [p for p in menu if ricerca in p["nome"].lower()]
+        self.assertEqual(len(risultati), 0)
+    
+    def test_ricerca_parziale(self):
+        """Verifica ricerca parziale."""
+        ricerca = "for"  # trova "Quattro Formaggi"
+        risultati = [p for p in menu if ricerca in p["nome"].lower()]
+        self.assertGreater(len(risultati), 0)
+
+
 if __name__ == "__main__":
     unittest.main()
