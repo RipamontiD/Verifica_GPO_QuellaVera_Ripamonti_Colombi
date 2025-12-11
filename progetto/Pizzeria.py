@@ -147,6 +147,35 @@ def cambia_stato():
         print("❌ Input non valido!")
 
 
+def elimina_ordine():
+    """
+    Elimina un ordine esistente.
+    
+    Chiede conferma prima di eliminare.
+    """
+    if not ordini:
+        print("\n📋 Nessun ordine.")
+        return
+    
+    lista_ordini()
+    
+    try:
+        num = int(input("\nNumero ordine da eliminare: "))
+        ordine = next((o for o in ordini if o["numero"] == num), None)
+        
+        if ordine:
+            conferma = input(f"Eliminare ordine #{num}? (s/n): ")
+            if conferma.lower() == "s":
+                ordini.remove(ordine)
+                print(f"✅ Ordine #{num} eliminato!")
+            else:
+                print("❌ Operazione annullata.")
+        else:
+            print("❌ Ordine non trovato!")
+    except:
+        print("❌ Input non valido!")
+
+
 def aggiungi_pizza():
     """
     Aggiunge una nuova pizza al menu.
