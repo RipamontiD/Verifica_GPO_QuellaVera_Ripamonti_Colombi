@@ -226,6 +226,28 @@ def stampa_scontrino(ordine):
     print("\n")
 
 
+def cerca_pizza():
+    """
+    Cerca una pizza nel menu per nome.
+    
+    Permette di cercare una pizza inserendo il nome
+    o parte di esso. Mostra tutte le corrispondenze trovate.
+    """
+    print("\n--- CERCA PIZZA ---")
+    ricerca = input("Nome pizza da cercare: ").lower()
+    
+    risultati = [p for p in menu if ricerca in p["nome"].lower()]
+    
+    if risultati:
+        print(f"\n✅ Trovate {len(risultati)} pizze:")
+        print("="*40)
+        for pizza in risultati:
+            print(f"  {pizza['id']}. {pizza['nome']:<20} €{pizza['prezzo']:.2f}")
+        print("="*40)
+    else:
+        print("❌ Nessuna pizza trovata.")
+
+
 # === PROGRAMMA PRINCIPALE ===
 if __name__ == "__main__":
     print("""
@@ -235,31 +257,34 @@ if __name__ == "__main__":
     """)
 
     while True:
-        print("\n--- MENU ---")
-        print("1. Visualizza Menu")
-        print("2. Nuovo Ordine")
-        print("3. Lista Ordini")
-        print("4. Cambia Stato Ordine")
-        print("5. Aggiungi Pizza")
-        print("6. Elimina Ordine")
-        print("0. Esci")
-        
-        scelta = input("\nScelta: ")
-        
-        if scelta == "1":
-            mostra_menu()
-        elif scelta == "2":
-            nuovo_ordine()
-        elif scelta == "3":
-            lista_ordini()
-        elif scelta == "4":
-            cambia_stato()
-        elif scelta == "5":
-            aggiungi_pizza()
-        elif scelta == "6":
-            elimina_ordine()
-        elif scelta == "0":
-            print("\n👋 Arrivederci!")
-            break
-        else:
-            print("❌ Scelta non valida!")
+    print("\n--- MENU ---")
+    print("1. Visualizza Menu")
+    print("2. Nuovo Ordine")
+    print("3. Lista Ordini")
+    print("4. Cambia Stato Ordine")
+    print("5. Aggiungi Pizza")
+    print("6. Elimina Ordine")
+    print("7. Cerca Pizza")
+    print("0. Esci")
+    
+    scelta = input("\nScelta: ")
+    
+    if scelta == "1":
+        mostra_menu()
+    elif scelta == "2":
+        nuovo_ordine()
+    elif scelta == "3":
+        lista_ordini()
+    elif scelta == "4":
+        cambia_stato()
+    elif scelta == "5":
+        aggiungi_pizza()
+    elif scelta == "6":
+        elimina_ordine()
+    elif scelta == "7":
+        cerca_pizza()
+    elif scelta == "0":
+        print("\n👋 Arrivederci!")
+        break
+    else:
+        print("❌ Scelta non valida!")
