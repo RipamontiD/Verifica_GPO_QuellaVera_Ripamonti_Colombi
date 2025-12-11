@@ -11,9 +11,9 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'pizzezia_verifica_GPO'
+project = 'pizzeria_verifica_GPO'
 copyright = '2025, Ripamonti, Colombi'
-author = 'Ripamonti, Colombi'
+author = 'Ripamonti Diego, Colombi Marco'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
