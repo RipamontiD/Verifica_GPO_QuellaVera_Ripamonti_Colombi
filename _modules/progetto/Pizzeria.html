@@ -232,6 +232,38 @@
 
 
 
+<div class="viewcode-block" id="elimina_ordine">
+<a class="viewcode-back" href="../../progetto.html#progetto.Pizzeria.elimina_ordine">[documenti]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">elimina_ordine</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Elimina un ordine esistente.</span>
+<span class="sd">    </span>
+<span class="sd">    Chiede conferma prima di eliminare.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ordini</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📋 Nessun ordine.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="n">lista_ordini</span><span class="p">()</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Numero ordine da eliminare: &quot;</span><span class="p">))</span>
+        <span class="n">ordine</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">ordini</span> <span class="k">if</span> <span class="n">o</span><span class="p">[</span><span class="s2">&quot;numero&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">ordine</span><span class="p">:</span>
+            <span class="n">conferma</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eliminare ordine #</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">? (s/n): &quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">conferma</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+                <span class="n">ordini</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">ordine</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Ordine #</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> eliminato!&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Operazione annullata.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Ordine non trovato!&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Input non valido!&quot;</span><span class="p">)</span></div>
+
+
+
 <div class="viewcode-block" id="aggiungi_pizza">
 <a class="viewcode-back" href="../../progetto.html#progetto.Pizzeria.aggiungi_pizza">[documenti]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">aggiungi_pizza</span><span class="p">():</span>
