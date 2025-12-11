@@ -16,7 +16,8 @@ author = 'Ripamonti, Colombi'
 extensions = [
     'sphinx.ext.autodoc',       # Legge le docstring
     'sphinx.ext.napoleon',      # Supporta stile Google/NumPy
-    'sphinx.ext.viewcode',      # Aggiunge link al codice sorgente]
+    'sphinx.ext.viewcode',      # Aggiunge link al codice sorgente
+]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
