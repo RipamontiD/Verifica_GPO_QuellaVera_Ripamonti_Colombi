@@ -1,3 +1,9 @@
+"""
+Modulo per la gestione di una pizzeria.
+
+Permette di gestire menu, ordini e stato delle consegne.
+"""
+
 # === DATI ===
 menu = [
     {"id": 1, "nome": "Margherita", "prezzo": 6.00},
@@ -14,6 +20,11 @@ numero_ordine = 1
 
 # === FUNZIONI ===
 def mostra_menu():
+    """
+    Mostra il menu delle pizze disponibili.
+    
+    Stampa l'elenco completo delle pizze con ID, nome e prezzo.
+    """
     print("\n" + "="*40)
     print("        🍕 MENU PIZZERIA 🍕")
     print("="*40)
@@ -23,6 +34,12 @@ def mostra_menu():
 
 
 def nuovo_ordine():
+    """
+    Crea un nuovo ordine.
+    
+    Chiede il nome del cliente e permette di aggiungere pizze all'ordine.
+    Calcola automaticamente il totale.
+    """
     global numero_ordine
     
     print("\n--- NUOVO ORDINE ---")
@@ -71,6 +88,11 @@ def nuovo_ordine():
 
 
 def lista_ordini():
+    """
+    Mostra tutti gli ordini.
+    
+    Visualizza numero, cliente, stato, pizze e totale di ogni ordine.
+    """
     if not ordini:
         print("\n📋 Nessun ordine.")
         return
@@ -87,6 +109,11 @@ def lista_ordini():
 
 
 def cambia_stato():
+    """
+    Cambia lo stato di un ordine.
+    
+    Stati possibili: In attesa, In preparazione, Pronto, Consegnato.
+    """
     if not ordini:
         print("\n📋 Nessun ordine.")
         return
@@ -118,6 +145,11 @@ def cambia_stato():
 
 
 def aggiungi_pizza():
+    """
+    Aggiunge una nuova pizza al menu.
+    
+    Chiede nome e prezzo della nuova pizza.
+    """
     print("\n--- AGGIUNGI PIZZA ---")
     nome = input("Nome pizza: ")
     
@@ -131,6 +163,11 @@ def aggiungi_pizza():
         
 
 def elimina_ordine():
+    """
+    Elimina un ordine esistente.
+    
+    Chiede conferma prima di eliminare.
+    """
     if not ordini:
         print("\n📋 Nessun ordine.")
         return
@@ -155,38 +192,39 @@ def elimina_ordine():
 
 
 # === PROGRAMMA PRINCIPALE ===
-print("""
-╔═══════════════════════════════════════╗
-║   🍕 GESTIONE PIZZERIA 🍕            ║
-╚═══════════════════════════════════════╝
-""")
+if __name__ == "__main__":
+    print("""
+    ╔═══════════════════════════════════════╗
+    ║   🍕 GESTIONE PIZZERIA 🍕            ║
+    ╚═══════════════════════════════════════╝
+    """)
 
-while True:
-    print("\n--- MENU ---")
-    print("1. Visualizza Menu")
-    print("2. Nuovo Ordine")
-    print("3. Lista Ordini")
-    print("4. Cambia Stato Ordine")
-    print("5. Aggiungi Pizza")
-    print("6. Elimina Ordine")
-    print("0. Esci")
-    
-    scelta = input("\nScelta: ")
-    
-    if scelta == "1":
-        mostra_menu()
-    elif scelta == "2":
-        nuovo_ordine()
-    elif scelta == "3":
-        lista_ordini()
-    elif scelta == "4":
-        cambia_stato()
-    elif scelta == "5":
-        aggiungi_pizza()
-    elif scelta == "6":
-        elimina_ordine()
-    elif scelta == "0":
-        print("\n👋 Arrivederci!")
-        break
-    else:
-        print("❌ Scelta non valida!")
+    while True:
+        print("\n--- MENU ---")
+        print("1. Visualizza Menu")
+        print("2. Nuovo Ordine")
+        print("3. Lista Ordini")
+        print("4. Cambia Stato Ordine")
+        print("5. Aggiungi Pizza")
+        print("6. Elimina Ordine")
+        print("0. Esci")
+        
+        scelta = input("\nScelta: ")
+        
+        if scelta == "1":
+            mostra_menu()
+        elif scelta == "2":
+            nuovo_ordine()
+        elif scelta == "3":
+            lista_ordini()
+        elif scelta == "4":
+            cambia_stato()
+        elif scelta == "5":
+            aggiungi_pizza()
+        elif scelta == "6":
+            elimina_ordine()
+        elif scelta == "0":
+            print("\n👋 Arrivederci!")
+            break
+        else:
+            print("❌ Scelta non valida!")
