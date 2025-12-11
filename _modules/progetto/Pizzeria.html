@@ -220,6 +220,9 @@
             <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">scelta</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
                 <span class="n">ordine</span><span class="p">[</span><span class="s2">&quot;stato&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stati</span><span class="p">[</span><span class="n">scelta</span><span class="p">]</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Stato aggiornato: </span><span class="si">{</span><span class="n">ordine</span><span class="p">[</span><span class="s1">&#39;stato&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="n">ordine</span><span class="p">[</span><span class="s2">&quot;stato&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Consegnato&quot;</span><span class="p">:</span>
+                    <span class="n">stampa_scontrino</span><span class="p">(</span><span class="n">ordine</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Scelta non valida!&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -250,35 +253,38 @@
 
         
 
-<div class="viewcode-block" id="elimina_ordine">
-<a class="viewcode-back" href="../../progetto.html#progetto.Pizzeria.elimina_ordine">[documenti]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">elimina_ordine</span><span class="p">():</span>
+
+<div class="viewcode-block" id="stampa_scontrino">
+<a class="viewcode-back" href="../../progetto.html#progetto.Pizzeria.stampa_scontrino">[documenti]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stampa_scontrino</span><span class="p">(</span><span class="n">ordine</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Elimina un ordine esistente.</span>
+<span class="sd">    Stampa lo scontrino di un ordine.</span>
 <span class="sd">    </span>
-<span class="sd">    Chiede conferma prima di eliminare.</span>
+<span class="sd">    Genera uno scontrino formattato con intestazione pizzeria,</span>
+<span class="sd">    dettagli ordine, elenco pizze e totale.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        ordine: Dizionario contenente numero, cliente, pizze e totale.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">ordini</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📋 Nessun ordine.&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╔════════════════════════════════════╗&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;║        🍕 PIZZERIA ITALIA 🍕       ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;║       Via Roma 123, Milano         ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;║         Tel: 02-1234567            ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╠════════════════════════════════════╣&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;║  Ordine: #</span><span class="si">{</span><span class="n">ordine</span><span class="p">[</span><span class="s1">&#39;numero&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2">              ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;║  Cliente: </span><span class="si">{</span><span class="n">ordine</span><span class="p">[</span><span class="s1">&#39;cliente&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2">       ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╠════════════════════════════════════╣&quot;</span><span class="p">)</span>
     
-    <span class="n">lista_ordini</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ordine</span><span class="p">[</span><span class="s2">&quot;pizze&quot;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;║  </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;quantita&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">x </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;nome&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;18</span><span class="si">}</span><span class="s2"> €</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;prezzo&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;6.2f</span><span class="si">}</span><span class="s2"> ║&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Numero ordine da eliminare: &quot;</span><span class="p">))</span>
-        <span class="n">ordine</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">ordini</span> <span class="k">if</span> <span class="n">o</span><span class="p">[</span><span class="s2">&quot;numero&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="n">ordine</span><span class="p">:</span>
-            <span class="n">conferma</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eliminare ordine #</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">? (s/n): &quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">conferma</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
-                <span class="n">ordini</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">ordine</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Ordine #</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> eliminato!&quot;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Operazione annullata.&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Ordine non trovato!&quot;</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Input non valido!&quot;</span><span class="p">)</span></div>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╠════════════════════════════════════╣&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;║  TOTALE:                  €</span><span class="si">{</span><span class="n">ordine</span><span class="p">[</span><span class="s1">&#39;totale&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;6.2f</span><span class="si">}</span><span class="s2"> ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╠════════════════════════════════════╣&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;║         Grazie e arrivederci!      ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╚════════════════════════════════════╝&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
 

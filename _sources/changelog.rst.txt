@@ -1,10 +1,17 @@
 Changelog
 =========
 
+Versione 1.2
+------------
+
+- **Nuova feature**: Aggiunta funzione ``stampa_scontrino()`` che stampa lo scontrino con tutti gli ordini effettuati. calcola il conto finale.
+
+
 Versione 1.1
 ------------
 
 - **Nuova feature**: Aggiunta funzione ``elimina_ordine()`` che permette di eliminare un ordine esistente. Chiede conferma prima di procedere con l'eliminazione.
+
 
 Versione 1.0
 ------------

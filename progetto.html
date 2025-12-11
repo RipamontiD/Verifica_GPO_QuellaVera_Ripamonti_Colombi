@@ -48,10 +48,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Progetto</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.aggiungi_pizza"><code class="docutils literal notranslate"><span class="pre">aggiungi_pizza()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.cambia_stato"><code class="docutils literal notranslate"><span class="pre">cambia_stato()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.elimina_ordine"><code class="docutils literal notranslate"><span class="pre">elimina_ordine()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.lista_ordini"><code class="docutils literal notranslate"><span class="pre">lista_ordini()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.mostra_menu"><code class="docutils literal notranslate"><span class="pre">mostra_menu()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.nuovo_ordine"><code class="docutils literal notranslate"><span class="pre">nuovo_ordine()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#progetto.Pizzeria.stampa_scontrino"><code class="docutils literal notranslate"><span class="pre">stampa_scontrino()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -100,13 +100,6 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="progetto.Pizzeria.elimina_ordine">
-<span class="sig-prename descclassname"><span class="pre">progetto.Pizzeria.</span></span><span class="sig-name descname"><span class="pre">elimina_ordine</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/progetto/Pizzeria.html#elimina_ordine"><span class="viewcode-link"><span class="pre">[sorgente]</span></span></a><a class="headerlink" href="#progetto.Pizzeria.elimina_ordine" title="Link to this definition"></a></dt>
-<dd><p>Elimina un ordine esistente.</p>
-<p>Chiede conferma prima di eliminare.</p>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="progetto.Pizzeria.lista_ordini">
 <span class="sig-prename descclassname"><span class="pre">progetto.Pizzeria.</span></span><span class="sig-name descname"><span class="pre">lista_ordini</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/progetto/Pizzeria.html#lista_ordini"><span class="viewcode-link"><span class="pre">[sorgente]</span></span></a><a class="headerlink" href="#progetto.Pizzeria.lista_ordini" title="Link to this definition"></a></dt>
 <dd><p>Mostra tutti gli ordini.</p>
@@ -126,6 +119,19 @@
 <dd><p>Crea un nuovo ordine.</p>
 <p>Chiede il nome del cliente e permette di aggiungere pizze all’ordine.
 Calcola automaticamente il totale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="progetto.Pizzeria.stampa_scontrino">
+<span class="sig-prename descclassname"><span class="pre">progetto.Pizzeria.</span></span><span class="sig-name descname"><span class="pre">stampa_scontrino</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/progetto/Pizzeria.html#stampa_scontrino"><span class="viewcode-link"><span class="pre">[sorgente]</span></span></a><a class="headerlink" href="#progetto.Pizzeria.stampa_scontrino" title="Link to this definition"></a></dt>
+<dd><p>Stampa lo scontrino di un ordine.</p>
+<p>Genera uno scontrino formattato con intestazione pizzeria,
+dettagli ordine, elenco pizze e totale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ordine</strong> – Dizionario contenente numero, cliente, pizze e totale.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
