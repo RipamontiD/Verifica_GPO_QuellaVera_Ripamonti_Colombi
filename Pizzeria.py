@@ -109,6 +109,9 @@ def cambia_stato():
             if 0 <= scelta < 4:
                 ordine["stato"] = stati[scelta]
                 print(f"✅ Stato aggiornato: {ordine['stato']}")
+                
+                if ordine["stato"] == "Consegnato":
+                    stampa_scontrino(ordine)
             else:
                 print("❌ Scelta non valida!")
         else:
@@ -128,6 +131,28 @@ def aggiungi_pizza():
         print(f"✅ Pizza '{nome}' aggiunta!")
     except:
         print("❌ Prezzo non valido!")
+
+
+def stampa_scontrino(ordine):
+    print("\n")
+    print("╔════════════════════════════════════╗")
+    print("║        🍕 PIZZERIA ITALIA 🍕       ║")
+    print("║       Via Roma 123, Milano         ║")
+    print("║         Tel: 02-1234567            ║")
+    print("╠════════════════════════════════════╣")
+    print(f"║  Ordine: #{ordine['numero']:<10}              ║")
+    print(f"║  Cliente: {ordine['cliente']:<15}       ║")
+    print("╠════════════════════════════════════╣")
+    
+    for p in ordine["pizze"]:
+        print(f"║  {p['quantita']}x {p['nome']:<18} €{p['prezzo']:>6.2f} ║")
+    
+    print("╠════════════════════════════════════╣")
+    print(f"║  TOTALE:                  €{ordine['totale']:>6.2f} ║")
+    print("╠════════════════════════════════════╣")
+    print("║         Grazie e arrivederci!      ║")
+    print("╚════════════════════════════════════╝")
+    print("\n")
 
 
 # === PROGRAMMA PRINCIPALE ===
